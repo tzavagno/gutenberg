@@ -92,7 +92,8 @@ $block-editor-link-control-number-of-actions: 1;
 .block-editor-link-control__search-results-label {
 	padding: 15px 30px 0 30px;
 	display: block;
-	font-size: 1.1em;
+	font-size: $small-label;
+	font-weight: 600;
 }
 
 .block-editor-link-control__search-results {

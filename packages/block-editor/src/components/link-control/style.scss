@@ -90,7 +90,7 @@ $block-editor-link-control-number-of-actions: 1;
 }
 
 .block-editor-link-control__search-results-label {
-	padding: 15px 30px 0 30px;
+	padding: 15px 30px 0 $grid-unit-20;
 	display: block;
 	font-size: $small-label;
 	font-weight: 600;

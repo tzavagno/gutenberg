@@ -78,14 +78,12 @@ $block-editor-link-control-number-of-actions: 1;
 		height: $grid-unit-20/2;
 		top: 0;
 		bottom: auto;
-		background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
 	}
 
 	&::after {
 		height: $grid-unit-20;
 		bottom: 0;
 		top: auto;
-		background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
 	}
 }
 

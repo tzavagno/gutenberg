@@ -88,9 +88,9 @@ $block-editor-link-control-number-of-actions: 1;
 }
 
 .block-editor-link-control__search-results-label {
-	padding: 15px 30px 0 $grid-unit-20;
+	padding: $grid-unit-20 $grid-unit-40 0;
 	display: block;
-	font-size: $small-label;
+	font-size: $default-font-size;
 	font-weight: 600;
 }
 
@@ -115,7 +115,7 @@ $block-editor-link-control-number-of-actions: 1;
 	width: 100%;
 	border: none;
 	text-align: left;
-	padding: 10px 15px;
+	padding: $grid-unit-15 $grid-unit-20;
 	border-radius: 5px;
 	height: auto;
 

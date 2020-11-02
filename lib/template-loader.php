@@ -13,25 +13,7 @@
  * @return string[] List of all overrideable default template types.
  */
 function get_template_types() {
-	return array(
-		'index',
-		'404',
-		'archive',
-		'author',
-		'category',
-		'tag',
-		'taxonomy',
-		'date',
-		'embed',
-		'home',
-		'front-page',
-		'privacy-policy',
-		'page',
-		'search',
-		'single',
-		'singular',
-		'attachment',
-	);
+	return array_keys( gutenberg_get_default_template_types_definitions() );
 }
 
 /**
@@ -295,6 +277,13 @@ function gutenberg_find_template_post_and_parts( $template_type, $template_hiera
 				if ( ! is_array( $current_template_post ) ) {
 					$current_template_post->post_content = $file_contents;
 				}
+
+				$template_types_definitions = gutenberg_get_default_template_types_definitions();
+				if ( isset( $template_types_definitions[ $post_name ] ) ) {
+					$current_template_post['post_title']   = $template_types_definitions[ $post_name ]['title'];
+					$current_template_post['post_excerpt'] = $template_types_definitions[ $post_name ]['description'];
+				}
+
 				$current_template_post = get_post(
 					wp_insert_post( $current_template_post )
 				);

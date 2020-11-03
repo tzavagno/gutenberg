@@ -54,13 +54,14 @@ const entityActions = defaultEntities.reduce( ( result, entity ) => {
 	return result;
 }, {} );
 
-registerStore( REDUCER_KEY, {
+export const storeConfig = {
 	reducer,
 	controls,
 	actions: { ...actions, ...entityActions },
 	selectors: { ...selectors, ...entitySelectors },
 	resolvers: { ...resolvers, ...entityResolvers },
-} );
+};
+registerStore( REDUCER_KEY, storeConfig );
 
 export { default as EntityProvider } from './entity-provider';
 export * from './entity-provider';

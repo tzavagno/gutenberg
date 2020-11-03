@@ -145,7 +145,7 @@ describe( 'receiveEntityRecord', () => {
 		);
 		jest.runAllTimers();
 
-		// Select record with id = 2, it is available and should not trigger the resolver
+		// Select record with id = test-1, it is available and should not trigger the resolver
 		await runPromise(
 			registry
 				.dispatch( 'test/resolution' )
@@ -153,7 +153,7 @@ describe( 'receiveEntityRecord', () => {
 		);
 		expect( getEntityRecord ).not.toHaveBeenCalled();
 
-		// Select record with id = 4, it is not available and should trigger the resolver
+		// Select record with id = test-2, it is not available and should trigger the resolver
 		await runPromise(
 			registry
 				.dispatch( 'test/resolution' )
@@ -259,9 +259,12 @@ describe( 'saveEntityRecord', () => {
 		jest.runAllTimers();
 		expect( triggerFetch ).toBeCalledTimes( 0 );
 
-		// Calling a selector after the save is finished should trigger a GET request
+		// Calling the selector after the save is finished should trigger a resolver and a GET request
 		registry.select( 'core' ).getEntityRecords( 'root', 'postType' );
 		jest.runAllTimers();
 		expect( triggerFetch ).toBeCalledTimes( 1 );
+		expect( triggerFetch ).toBeCalledWith( {
+			path: '/wp/v2/types?context=edit',
+		} );
 	} );
 } );

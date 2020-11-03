@@ -13,7 +13,7 @@
  * @return string[] List of all overrideable default template types.
  */
 function get_template_types() {
-	return array_keys( gutenberg_get_default_template_types_definitions() );
+	return array_keys( gutenberg_get_default_template_types() );
 }
 
 /**
@@ -278,10 +278,10 @@ function gutenberg_find_template_post_and_parts( $template_type, $template_hiera
 					$current_template_post->post_content = $file_contents;
 				}
 
-				$template_types_definitions = gutenberg_get_default_template_types_definitions();
-				if ( isset( $template_types_definitions[ $post_name ] ) ) {
-					$current_template_post['post_title']   = $template_types_definitions[ $post_name ]['title'];
-					$current_template_post['post_excerpt'] = $template_types_definitions[ $post_name ]['description'];
+				$default_template_types = gutenberg_get_default_template_types();
+				if ( isset( $default_template_types[ $post_name ] ) ) {
+					$current_template_post['post_title']   = $default_template_types[ $post_name ]['title'];
+					$current_template_post['post_excerpt'] = $default_template_types[ $post_name ]['description'];
 				}
 
 				$current_template_post = get_post(

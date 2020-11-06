@@ -197,6 +197,13 @@ $block-editor-link-control-number-of-actions: 1;
 	}
 }
 
+.block-editor-link-control__search-create svg {
+	width: 24px;
+	background-color: #1e1e1e;
+	color: #fff;
+	border-radius: 2px;
+}
+
 .block-editor-link-control__loading {
 	margin: $grid-unit-20; // when only loading control is shown it requires it's own spacing.
 	display: flex;

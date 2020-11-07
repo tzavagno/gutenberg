@@ -117,6 +117,7 @@ require dirname( __FILE__ ) . '/widgets.php';
 require dirname( __FILE__ ) . '/navigation.php';
 require dirname( __FILE__ ) . '/navigation-page.php';
 require dirname( __FILE__ ) . '/experiments-page.php';
+require dirname( __FILE__ ) . '/class-wp-theme-json.php';
 require dirname( __FILE__ ) . '/global-styles.php';
 
 if ( ! class_exists( 'WP_Block_Supports' ) ) {
